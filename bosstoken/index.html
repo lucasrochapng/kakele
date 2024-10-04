@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Boss Token</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="img/capivara.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="sombra"></div>
+
+    <div class="titulo">
+        <h1>Calculadora Boss Token</h1>
+        <p>Calcule o melhor lucro para você no marketing do jogo</p>  
+    </div>
+    
+    <form id="calculoForm">
+
+        <div id="box">
+            <div class="box-explicacao">
+                <h3>Oferta de Compra</h3>
+                <label>Preencha o formulário abaixo com as seguintes informações para simular uma oferta de compra de boss token no marketing</label>
+            </div>
+            
+            <label for="unidadesCompra">Unidades:</label>
+            <input type="number" id="unidadesCompra" placeholder="Insira o número de boss token" required>
+        
+            <label for="precoCompra">Ouro por Unidade:</label>
+            <input type="number" id="precoCompra" placeholder="Insira o valor do boss token por unidade" required>
+        </div>
+
+        <br>
+
+        <div id="box">
+            <div class="box-explicacao">
+                <h3>Oferta de Venda</h3>
+                <label>Preencha o formulário abaixo com as seguintes informações para simular uma oferta de venda de boss token no marketing</label>
+            </div>
+            
+            <label for="bossToken">Unidades de Boss Token:</label>
+            <input type="number" id="bossToken" placeholder="Insira quantas Boss Token pretende vender" required>
+            
+            <label for="kkc">Unidades de KKC:</label>
+            <input type="number" id="kkc" placeholder="Insira por quantos KKC venderá cada Boss Token" required>
+            
+            <label for="precoKKC">Preço do KKC:</label>
+            <input type="number" id="precoKKC" placeholder="Insira o preço da unidade de KKC em Ouro" required>
+        </div>
+
+        <br>
+
+        <button type="button" onclick="calcularLucro()">CALCULAR LUCRO</button>
+        <br>
+
+        <div id="resultado"></div>
+
+    </form>
+
+    <div id="notificacao" class="esconder">
+        <img src="img/capivara-error.png" alt="error">
+        <div id="notificacao-text">
+            <h3>Erro</h3>
+            <p>Preencha todos os campos para calcular o seu lucro!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="coinshub">
+            <p>Apoie o desenvolvedor na 
+                <a href="https://coinshub.com.br/affiliate/zenin/">Coins Hub.</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function validarCampos() {
+            let campos = document.querySelectorAll('input[required]');
+            for (let i = 0; i < campos.length; i++) {
+                if (!campos[i].value) {
+                    exibirNotificacao('Por favor, preencha todos os campos.');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function exibirNotificacao(mensagem) {
+            const notificacao = document.getElementById('notificacao');
+            notificacao.style.display = 'flex';
+            notificacao.classList.remove('esconder');
+            setTimeout(function() {
+                notificacao.classList.add('esconder');
+            }, 5000);
+        }
+
+        function calcularLucro() {
+            if (!validarCampos()) {
+                return;
+            }
+
+            let unidadesCompra = parseFloat(document.getElementById("unidadesCompra").value);
+            let precoCompra = parseFloat(document.getElementById("precoCompra").value);
+            let bossToken = parseFloat(document.getElementById("bossToken").value);
+            let kkc = parseFloat(document.getElementById("kkc").value);
+            let precoKKC = parseFloat(document.getElementById("precoKKC").value);
+
+            // Cálculo do investimento
+            let investimento = unidadesCompra * precoCompra;
+            let taxaDeImpostoCompra = investimento * 0.10;
+            investimento = investimento + taxaDeImpostoCompra;
+
+            // Cálculo do valor total de venda
+            let valorVenda = (bossToken * kkc) * precoKKC;
+
+            // Cálculo do lucro líquido
+            let lucroLiquido = valorVenda - investimento;
+
+            let lucroFormatado = lucroLiquido.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            lucroFormatado = lucroFormatado.replace(/,00$/, '');
+
+            document.getElementById("resultado").innerText = "Seu lucro será de " + lucroFormatado + " coins";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnCalcular = document.querySelector('button');
+            btnCalcular.addEventListener('click', calcularLucro);
+        });
+
+        function arrastarElemento(elemento) {
+            let posicaoInicialX = 0;
+            let posicaoInicialY = 0;
+            let posicaoFinalX = 0;
+            let posicaoFinalY = 0;
+            let arrastando = false;
+
+            elemento.addEventListener("mousedown", iniciarArraste);
+            document.addEventListener("mouseup", finalizarArraste);
+
+            function iniciarArraste(e) {
+                arrastando = true;
+                posicaoInicialX = e.clientX;
+                posicaoInicialY = e.clientY;
+                posicaoFinalX = elemento.offsetLeft;
+                posicaoFinalY = elemento.offsetTop;
+                document.addEventListener("mousemove", arrastarElemento);
+            }
+
+            function arrastarElemento(e) {
+                if (arrastando) {
+                    let diferencaX = e.clientX - posicaoInicialX;
+                    let diferencaY = e.clientY - posicaoInicialY;
+                    elemento.style.left = posicaoFinalX + diferencaX + "px";
+                    elemento.style.top = posicaoFinalY + diferencaY + "px";
+                }
+            }
+
+            function finalizarArraste() {
+                arrastando = false;
+                document.removeEventListener("mousemove", arrastarElemento);
+            }
+        }
+
+        const calculoForm = document.getElementById("calculoForm");
+        arrastarElemento(calculoForm);
+    </script>
+</body>
+</html>

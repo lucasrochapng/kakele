@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Lucro</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="img/capivara.png" type="image/x-icon">
+    
+</head>
+<body>
+
+    <div class="sombra"></div>
+
+    <div class="titulo">
+        <h1>Calculadora de Market</h1>
+        <p>Calcule o melhor lucro para você no marketing do jogo</p>  
+    </div>
+    
+    <form id="calculoForm">
+
+        <!-- <h1>SIMULADOR DE LUCRO KAKELE</h1> -->
+
+        <div id="box">
+            <div class="box-explicacao">
+                <h3>Oferta de Compra</h3>
+                <label>Preencha o formulário abaixo com as seguintes informações para simular uma oferta de compra no marketing</label>
+            </div>
+            
+            <label for="unidadesCompra">Unidades:</label>
+            <input type="number" id="unidadesCompra" placeholder="Insira o número de itens que deseja comprar" required>
+        
+            <label for="precoCompra">Moedas por Unidade:</label>
+            <input type="number" id="precoCompra" placeholder="Insira o valor do item por unidade" required>
+        </div>
+
+        <br>
+
+        <div id="box">
+            <div class="box-explicacao">
+                <h3>Oferta de Venda</h3>
+                <label>Preencha o formulário abaixo com as seguintes informações para simular uma oferta de venda no marketing</label>
+            </div>
+            
+            <label for="unidadesVenda">Unidades:</label>
+            <input type="number" id="unidadesVenda" placeholder="Insira o número de itens que deseja vender" required>
+            <label for="precoVenda">Moedas por Unidade:</label>
+            <input type="number" id="precoVenda" placeholder="Insira o valor do item por unidade" required>
+            <div id="box-ofertaGlobal">
+                <input type="checkbox" id="ofertaGlobal" onclick="togglePrecoUnidadeKakele()">
+                <label for="ofertaGlobal">Criar em todos os servidores</label>
+            </div>
+            <input type="number" id="precoUnidadeKakele" placeholder="Insira o valor do kakele coin por unidade" style="display: none;">
+        </div>
+
+        <br>
+
+        <div id="box">
+            <div class="box-explicacao">
+                <h3>Preço do item no NPC</h3>
+                <label>Insira o valor unitário do item, que os NPCs do jogo pagam </label>
+            </div>
+            
+            <label for="valorUnitario">Moedas por Unidade:</label>
+            <input type="number" id="valorUnitario" placeholder="Insira o valor do item nos NPCs" required>
+        </div>
+        
+        <br>
+        <button type="button" onclick="calcularLucro()">CALCULAR LUCRO</button>
+        <br>
+
+        <div id="resultado"></div>
+
+    </form>
+
+    
+
+    <div id="notificacao" class="esconder">
+        <img src="img/capivara-error.png" alt="error">
+        <div id="notificacao-text">
+            <h3>Erro</h3>
+            <p>Preencha todos os campos para calcular o seu lucro!</p>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="coinshub">
+            <p>Apoie o desenvolvedor na 
+                <a href="https://coinshub.com.br/affiliate/zenin/">Coins Hub.</a>
+            </p>
+        </div>
+        
+    </footer>
+
+
+
+    <!-- <div id="resultado"></div> -->
+    
+    <script>
+
+        function validarCampos() {
+            let campos = document.querySelectorAll('input[required]');
+            for (let i = 0; i < campos.length; i++) {
+                if (!campos[i].value) {
+                    exibirNotificacao('Por favor, preencha todos os campos.');
+                        return false;
+                    }
+                }
+                return true;
+        }
+
+        function togglePrecoUnidadeKakele() {
+            const precoUnidadeKakele = document.getElementById('precoUnidadeKakele');
+            const ofertaGlobal = document.getElementById('ofertaGlobal');
+            if (ofertaGlobal.checked) {
+                precoUnidadeKakele.style.display = 'block';
+            } else {
+                precoUnidadeKakele.style.display = 'none';
+            }
+        }
+
+        function exibirNotificacao(mensagem) {
+            const notificacao = document.getElementById('notificacao');
+            // notificacao.innerText = mensagem;
+            notificacao.style.display = 'flex'; // Exibir a notificação
+            notificacao.classList.remove('esconder');
+            setTimeout(function() {
+                //notificacao.style.display = 'none'; // Ocultar a notificação após alguns segundos
+                notificacao.classList.add('esconder');
+            }, 5000); // 3000 milissegundos = 3 segundos
+        }
+
+        // Função para calcular o lucro líquido com base nas unidades compradas, preço de compra,
+        // valor unitário, unidades vendidas e preço de venda
+        function calcularLucro(unidadesCompra, precoCompra, valorUnitario, unidadesVenda, precoVenda, precoUnidadeKakele) {
+
+            // Verificar se todos os campos estão preenchidos
+            if (!validarCampos()) {
+                return;
+            }
+
+            if (precoUnidadeKakele === '' || isNaN(precoUnidadeKakele)) {
+                precoUnidadeKakele = 0;
+            } else {
+                precoUnidadeKakele = parseFloat(precoUnidadeKakele);
+            }
+
+            // Calcula o investimento total
+            let investimento = unidadesCompra * precoCompra;
+
+            // Calcula a taxa de imposto sobre o investimento
+            let taxaDeImpostoCompra = 0;
+
+            // Verifica se o preço de compra é menor que 10 vezes o valor unitário
+            if (precoCompra < valorUnitario * 10) {
+                // Se sim, subtrai 1% do investimento total e atribui à taxa de imposto
+                taxaDeImpostoCompra = investimento * 0.01;
+                if (taxaDeImpostoCompra < 100) {
+                    taxaDeImpostoCompra = 100;
+                    investimento = investimento + taxaDeImpostoCompra;
+                }
+                else{
+                    taxaDeImpostoCompra = investimento * 0.01;
+                    investimento = investimento + taxaDeImpostoCompra;
+                }
+                
+            } else {
+                // Se não, subtrai 10% do investimento total e atribui à taxa de imposto
+                taxaDeImpostoCompra = investimento * 0.10;
+                investimento = investimento + taxaDeImpostoCompra;
+            }
+
+            // Calcula o valor total da venda
+            let valorTotalVenda = unidadesVenda * precoVenda;
+
+            // Calcula a taxa de imposto sobre a venda
+            let taxaDeImpostoVenda = 0;
+
+            // Verifica se o preço de venda é menor que 10 vezes o valor unitário
+            if (precoVenda < valorUnitario * 10) {
+                // Se sim, subtrai 1% do valor total da venda e atribui à taxa de imposto
+                
+                taxaDeImpostoVenda = valorTotalVenda * 0.01;
+            } else {
+                // Se não, subtrai 10% do valor total da venda e atribui à taxa de imposto
+                taxaDeImpostoVenda = valorTotalVenda * 0.10;
+            }
+
+            let precoTotalKakele;
+            
+            if (precoUnidadeKakele !== null) {
+                precoTotalKakele = precoUnidadeKakele * 10;
+            }
+            else {
+                precoTotalKakele = 0;
+            }
+
+            // Calcula o lucro líquido (valor total da venda - investimento - taxa de imposto sobre a compra - taxa de imposto sobre a venda)
+            let lucroLiquido = valorTotalVenda - investimento - taxaDeImpostoVenda - precoTotalKakele ;
+
+            // Retorna o lucro líquido
+            return lucroLiquido;
+
+            
+
+        }
+    </script>
+
+    <script>
+        // Chamar a função togglePrecoUnidadeKakele() quando o documento for carregado
+        document.addEventListener("DOMContentLoaded", function() {
+            togglePrecoUnidadeKakele(); // Chama a função para garantir que o estado inicial esteja correto
+        });
+    </script>
+
+    <script>
+        // Chamar a função de cálculo do lucro após o carregamento completo do documento
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obter o botão de calcular
+            const btnCalcular = document.querySelector('button');
+
+            // Adicionar um ouvinte de evento ao botão
+            btnCalcular.addEventListener('click', function() {
+                // Obter os valores dos campos de entrada
+                let unidadesCompra = parseFloat(document.getElementById("unidadesCompra").value);
+                let precoCompra = parseFloat(document.getElementById("precoCompra").value);
+                let valorUnitario = parseFloat(document.getElementById("valorUnitario").value);
+                let unidadesVenda = parseFloat(document.getElementById("unidadesVenda").value);
+                let precoVenda = parseFloat(document.getElementById("precoVenda").value);
+                
+                let precoUnidadeKakeleElement = document.getElementById("precoUnidadeKakele");
+                let precoUnidadeKakele = precoUnidadeKakeleElement ? parseFloat(precoUnidadeKakeleElement.value) : null;
+
+
+                // Calcular o lucro usando a função fornecida
+                let lucroResultado = calcularLucro(unidadesCompra, precoCompra, valorUnitario, unidadesVenda, precoVenda, precoUnidadeKakele);
+
+                // Formatar o número para exibir separadores de milhares e duas casas decimais
+                let lucroFormatado = lucroResultado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+                // Remover a parte decimal se for zero
+                lucroFormatado = lucroFormatado.replace(/,00$/, '');
+
+                // Exibir o resultado na página
+                // document.getElementById("resultado").innerText = "Seu lucro será de " + lucroFormatado.toFixed(0) + " coins";
+                document.getElementById("resultado").innerText = "Seu lucro será de " + lucroFormatado + " coins";
+            });
+        });
+    </script>
+
+    <!--! ---------------------------------------- -->
+    <script>
+        // Função para permitir o arrastamento do formulário
+        function arrastarElemento(elemento) {
+            let posicaoInicialX = 0;
+            let posicaoInicialY = 0;
+            let posicaoFinalX = 0;
+            let posicaoFinalY = 0;
+            let arrastando = false;
+
+            // Adicionar evento de mouse pressionado
+            elemento.addEventListener("mousedown", iniciarArraste);
+
+            // Adicionar evento de mouse solto
+            document.addEventListener("mouseup", finalizarArraste);
+
+            function iniciarArraste(e) {
+                arrastando = true;
+                // Obter a posição inicial do mouse
+                posicaoInicialX = e.clientX;
+                posicaoInicialY = e.clientY;
+                // Obter a posição inicial do elemento
+                posicaoFinalX = elemento.offsetLeft;
+                posicaoFinalY = elemento.offsetTop;
+                // Adicionar evento de movimento do mouse
+                document.addEventListener("mousemove", arrastarElemento);
+            }
+
+            function arrastarElemento(e) {
+                if (arrastando) {
+                    // Calcular a diferença entre a posição inicial e a posição atual do mouse
+                    let diferencaX = e.clientX - posicaoInicialX;
+                    let diferencaY = e.clientY - posicaoInicialY;
+                    // Definir a nova posição do elemento
+                    elemento.style.left = posicaoFinalX + diferencaX + "px";
+                    elemento.style.top = posicaoFinalY + diferencaY + "px";
+                }
+            }
+
+            function finalizarArraste() {
+                arrastando = false;
+                // Remover o evento de movimento do mouse
+                document.removeEventListener("mousemove", arrastarElemento);
+            }
+        }
+
+        // Obter o formulário de cálculo
+        const calculoForm = document.getElementById("calculoForm");
+
+        // Chamar a função para permitir o arrastamento
+        arrastarElemento(calculoForm);
+    </script>
+    <!--! ---------------------------------------- -->
+
+    
+
+</body>
+
+
+</html>

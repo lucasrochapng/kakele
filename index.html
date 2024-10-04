@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+        }
+        .navbar {
+            background-color: #007bff; /* Azul Anterior */
+        }
+        .navbar .nav-link {
+            color: white; /* Links em branco */
+        }
+        .navbar .nav-link:hover {
+            color: #e0e0e0; /* Cor ao passar o mouse */
+        }
+        .hero {
+            background-color: black; /* Seção de Apresentação em Preto */
+            color: white;
+            /* padding: 100px 0; */
+        }
+        .hero .content {
+            display: flex;
+            /* align-items: flex-end;  */
+            align-items: center;
+        }
+        .hero .content .text-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza verticalmente o texto */
+            height: 100%; /* Para ocupar toda a altura da coluna */
+        }
+        .hero .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Borda arredondada para a imagem */
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">ZENIN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="simuladorlucro/index.html">SIMULADOR DE LUCRO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bosstoken/index.html">BOSS TOKEN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="timerboss/index.html">TIMER BOSS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção de Apresentação -->
+    <div class="hero">
+        <div class="container">
+            <div class="row content">
+                <div class="col-md-6 text-col">
+                    <h1>Bem-vindo ao Zenin!</h1>
+                    <p>Aqui você encontrará as melhores ferramentas de auxílio ao Kakele.</p>
+                    <a href="#" class="btn btn-light btn-lg">APOIE O DESENVOLVEDOR NA COINS HUB</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/banner.png" alt="Imagem de Apresentação" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Zenin. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
