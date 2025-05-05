@@ -1,60 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enfurecida</title>
-    <link rel="icon" href="img/banner.png" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enfurecida</title>
+  <link rel="icon" href="img/banner.png" type="image/x-icon" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <style>
         body {
-            background-color: black;
+        background-color: black;
         }
         .navbar {
-            background-color: #007bff;
+        background-color: #007bff;
         }
         .navbar .nav-link {
-            color: white;
+        color: white;
         }
         .navbar .nav-link:hover {
-            color: #e0e0e0;
-        }
-        .hero {
-            background-color: black; /* Seção de Apresentação em Preto */
-            color: white;
-            /* padding: 100px 0; */
-        }
-        .hero .content {
-            display: flex;
-            /* align-items: flex-end;  */
-            align-items: center;
-        }
-        .hero .content .text-col {
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centraliza verticalmente o texto */
-            height: 100%; /* Para ocupar toda a altura da coluna */
-        }
-        .hero .content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px; /* Borda arredondada para a imagem */
+        color: #e0e0e0;
         }
         .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
         }
 
-        /* cards */
         .card-custom {
-        position: relative; /* <-- garante que o ícone posicione certo */
-        border-radius: 1rem;
+        position: relative;
+        border-radius: 0.5rem;
         background-color: #1c1c1c;
         color: white;
-        margin: 10px;
+        margin: 5px auto;
+        width: 100%;
+        max-width: 600px;
         }
         .image-square {
         width: 100px;
@@ -85,7 +65,6 @@
         display: block;
         }
 
-        /* icone de info */
         .info-tooltip {
         display: none;
         position: absolute;
@@ -96,143 +75,128 @@
         z-index: 20;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-
         .info-icon:hover .info-tooltip {
         display: block;
         }
-
-
-        
     </style>
 </head>
+
 <body>
 
     <!-- Barra de Navegação -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">ZENIN</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/index.html">INICIO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="simuladorlucro/index.html">SIMULADOR DE LUCRO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="enfurecida/index.html">ENFURECIDA</a>
-                </li>
-            </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="/index.html">INICIO</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="simuladorlucro/index.html">SIMULADOR DE LUCRO</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="enfurecida/index.html">ENFURECIDA</a>
+            </li>
+        </ul>
         </div>
     </nav>
 
-    <!-- CARDS -->
+    <!-- CONTAINER CENTRALIZADO -->
+    <div class="container mt-4">
+    <div class="d-flex flex-column align-items-center">
 
-    <div class="card card-custom p-3 shadow-sm">
-        <div class="d-flex align-items-start">
-            <img src="./img/cultista-do-deserto.png" alt="Imagem" class="image-square">
-            <div class="info-text">
-                <h5 class="mb-2">Cultista do Deserto</h5>
-                <p class="mb-1"><strong>Level:</strong> 800</p>
-                <p class="mb-1"><strong>Alvo:</strong> 320 Cristais Cultistas</p>
-                <p class="mb-0">
-                    <strong>Localização:</strong> 
-                    <span class="location-container" id="localizacao">
-                        000.000.01
-                        <img src="./map/mapa-cultista.png" class="location-image" id="location-img" alt="Mapa">
-                    </span>
-                </p>
+        <!-- Card 1 -->
+        <div class="card card-custom shadow-sm">
+            <!-- Ícone fixo no canto superior direito -->
+            <div class="info-icon position-absolute" style="top: 10px; right: 10px; z-index: 10;">
+                <i class="bi bi-info-circle text-white" style="font-size: 1.2rem; cursor: pointer;"></i>
+                <div class="info-tooltip bg-dark text-white p-2 rounded">
+                    Para coletar esta Caçada Enfurecida, posicione-se na localização indicada e entre na passagem secreta localizada no canto superior direito da pirâmide. Siga até o final do corredor e caia na sala oculta. Lá, interaja com o pergaminho para prosseguir.
+                </div>
+            </div>
+
+            <div class="card-content p-3">
+                <div class="d-flex align-items-start">
+                    <img src="./img/cultista-do-deserto.png" alt="Imagem" class="image-square">
+                    <div class="info-text">
+                        <h5 class="mb-2">Cultista do Deserto</h5>
+                        <p class="mb-1"><strong>Level:</strong> 800</p>
+                        <p class="mb-1"><strong>Alvo:</strong> 320 Cristais Cultistas</p>
+                        <p class="mb-0">
+                            <strong>Localização:</strong>
+                            <span class="location-container">
+                            000.000.01
+                            <img src="./map/mapa-cultista.png" class="location-image" alt="Mapa">
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card card-custom p-3 shadow-sm">
-        <div class="d-flex align-items-start">
-            <img src="./img/montador-de-dragao-morto-vivo.png" alt="Imagem" class="image-square">
-            <div class="info-text">
-                <h5 class="mb-2">Montador de Dragão Morto-Vivo</h5>
-                <p class="mb-1"><strong>Level:</strong> 825</p>
-                <p class="mb-1"><strong>Alvo:</strong> x Caveira Amaldiçoada</p>
-                <p class="mb-0">
-                    <strong>Localização:</strong> 
-                    <span class="location-container" id="localizacao">
-                        000.000.02
-                        <img src="./map/mapa-montador.png" class="location-image" id="location-img" alt="Mapa">
-                    </span>
-                </p>
+        <!-- Card 2 -->
+        <div class="card card-custom shadow-sm">
+            <!-- Ícone fixo no canto superior direito -->
+            <div class="info-icon position-absolute" style="top: 10px; right: 10px; z-index: 10;">
+                <i class="bi bi-info-circle text-white" style="font-size: 1.2rem; cursor: pointer;"></i>
+                <div class="info-tooltip bg-dark text-white p-2 rounded">
+                    Para coletar esta Caçada Enfurecida, dirija-se até a localização indicada. Ao chegar, acione a tocha, suba a pirâmide e atravesse a porta para prosseguir.
+                </div>
+            </div>
+
+            <div class="card-content p-3">
+                <div class="d-flex align-items-start">
+                    <img src="./img/montador-de-dragao-morto-vivo.png" alt="Imagem" class="image-square">
+                    <div class="info-text">
+                        <h5 class="mb-2">Montador de Dragão Morto-Vivo</h5>
+                        <p class="mb-1"><strong>Level:</strong> 825</p>
+                        <p class="mb-1"><strong>Alvo:</strong> x Caveira Amaldiçoada</p>
+                        <p class="mb-0">
+                            <strong>Localização:</strong>
+                            <span class="location-container">
+                            000.000.02
+                            <img src="./map/mapa-montador.png" class="location-image" alt="Mapa">
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+
+    </div>
     </div>
 
-    <div class="card card-custom shadow-sm position-relative">
-  
-        <!-- Ícone de informações no canto superior direito (fora do padding) -->
-        <div class="info-icon position-absolute" style="top: 10px; right: 10px; z-index: 10;">
-          <i class="bi bi-info-circle text-white" style="font-size: 1.2rem; cursor: pointer;"></i>
-          <div class="info-tooltip bg-dark text-white p-2 rounded">
-            Este monstro é extremamente perigoso. Cuidado ao enfrentá-lo sem estratégia!
-          </div>
-        </div>
-      
-        <!-- Conteúdo principal com padding separado -->
-        <div class="card-content p-3">
-          <div class="d-flex align-items-start mt-3">
-            <img src="./img/montador-de-dragao-morto-vivo.png" alt="Imagem" class="image-square">
-            <div class="info-text">
-              <h5 class="mb-2">Montador de Dragão Morto-Vivo</h5>
-              <p class="mb-1"><strong>Level:</strong> 825</p>
-              <p class="mb-1"><strong>Alvo:</strong> x Caveira Amaldiçoada</p>
-              <p class="mb-0">
-                <strong>Localização:</strong>
-                <span class="location-container">
-                  000.000.02
-                  <img src="./map/mapa-montador.png" class="location-image" alt="Mapa">
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-    </div>
-      
-      
-      
-      
-      
+  <script>
+    // Mostrar imagem da localização
+    document.querySelectorAll('.location-container').forEach(container => {
+      const image = container.querySelector('.location-image');
+      container.addEventListener('click', function (e) {
+        e.stopPropagation();
+        image.style.display = (image.style.display === 'block') ? 'none' : 'block';
+      });
+    });
 
-    <script>
-        // Mostrar imagem da localização
-        document.querySelectorAll('.location-container').forEach(container => {
-          const image = container.querySelector('.location-image');
-          container.addEventListener('click', function (e) {
-            e.stopPropagation();
-            image.style.display = (image.style.display === 'block') ? 'none' : 'block';
-          });
-        });
-      
-        document.body.addEventListener('click', function () {
-          document.querySelectorAll('.location-image').forEach(img => {
-            img.style.display = 'none';
-          });
-          document.querySelectorAll('.info-tooltip').forEach(tip => {
-            tip.style.display = 'none';
-          });
-        });
-      
-        // Mostrar/ocultar tooltip (mobile)
-        document.querySelectorAll('.info-icon').forEach(icon => {
-          const tooltip = icon.querySelector('.info-tooltip');
-          icon.addEventListener('click', function (e) {
-            e.stopPropagation();
-            tooltip.style.display = (tooltip.style.display === 'block') ? 'none' : 'block';
-          });
-        });
-      </script>
-      
-      
+    document.body.addEventListener('click', function () {
+      document.querySelectorAll('.location-image').forEach(img => {
+        img.style.display = 'none';
+      });
+      document.querySelectorAll('.info-tooltip').forEach(tip => {
+        tip.style.display = 'none';
+      });
+    });
 
-  
-    
+    // Mostrar/ocultar tooltip (mobile)
+    document.querySelectorAll('.info-icon').forEach(icon => {
+      const tooltip = icon.querySelector('.info-tooltip');
+      icon.addEventListener('click', function (e) {
+        e.stopPropagation();
+        tooltip.style.display = (tooltip.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+
 </body>
 </html>
