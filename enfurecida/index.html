@@ -52,6 +52,7 @@
         border-radius: 1rem;
         background-color: #1c1c1c;
         color: white;
+        margin: 10px;
         }
         .image-square {
         width: 100px;
@@ -111,23 +112,41 @@
 
     <div class="card card-custom p-3 shadow-sm">
         <div class="d-flex align-items-start">
-          <img src="./img/cultista-do-deserto.png" alt="Imagem" class="image-square">
-          <div class="info-text">
-            <h5 class="mb-2">Cultista do Deserto</h5>
-            <p class="mb-1"><strong>Level:</strong> 800</p>
-            <p class="mb-1"><strong>Alvo:</strong> 320 Cristais Cultistas</p>
-            <p class="mb-0">
-              <strong>Localização:</strong> 
-              <span class="location-container" id="localizacao">
-                000.000.01
-                <img src="./map/mapa-cultista.png" class="location-image" id="location-img" alt="Mapa">
-              </span>
-            </p>
-          </div>
+            <img src="./img/cultista-do-deserto.png" alt="Imagem" class="image-square">
+            <div class="info-text">
+                <h5 class="mb-2">Cultista do Deserto</h5>
+                <p class="mb-1"><strong>Level:</strong> 800</p>
+                <p class="mb-1"><strong>Alvo:</strong> 320 Cristais Cultistas</p>
+                <p class="mb-0">
+                    <strong>Localização:</strong> 
+                    <span class="location-container" id="localizacao">
+                        000.000.01
+                        <img src="./map/mapa-cultista.png" class="location-image" id="location-img" alt="Mapa">
+                    </span>
+                </p>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <script>
+    <div class="card card-custom p-3 shadow-sm">
+        <div class="d-flex align-items-start">
+            <img src="./img/montador-de-dragao-morto-vivo.png" alt="Imagem" class="image-square">
+            <div class="info-text">
+                <h5 class="mb-2">Montador de Dragão Morto-Vivo</h5>
+                <p class="mb-1"><strong>Level:</strong> 825</p>
+                <p class="mb-1"><strong>Alvo:</strong> x Caveira Amaldiçoada</p>
+                <p class="mb-0">
+                    <strong>Localização:</strong> 
+                    <span class="location-container" id="localizacao">
+                        000.000.02
+                        <img src="./map/mapa-montador.png" class="location-image" id="location-img" alt="Mapa">
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
         // Exibe a imagem ao tocar (mobile)
         const container = document.getElementById('localizacao');
         const image = document.getElementById('location-img');
@@ -142,7 +161,7 @@
         document.body.addEventListener('click', function () {
           image.style.display = 'none';
         });
-      </script>
+    </script>
     
 </body>
 </html>
