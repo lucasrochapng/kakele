@@ -50,7 +50,8 @@
         position: relative;
         display: inline-block;
         }
-        .location-image {
+        
+        /* .location-image {
         display: none;
         position: absolute;
         top: 100%;
@@ -60,7 +61,25 @@
         border: 1px solid #333;
         border-radius: 0.5rem;
         z-index: 10;
+        } */
+
+        .location-image {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 1px solid #333;
+        border-radius: 0.5rem;
+        z-index: 10;
+        background-color: #000;
         }
+
+
+        
         .location-container:hover .location-image {
         display: block;
         }
@@ -72,7 +91,7 @@
         right: 10px;
         width: 320px;
         font-size: 0.875rem;
-        z-index: 20;
+        z-index: 9;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .info-icon:hover .info-tooltip {
