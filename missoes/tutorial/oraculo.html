@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oráculo</title>
+  <link rel="icon" href="img/banner.png" type="image/x-icon" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: black;
+        }
+
+        /* navbar */
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar .nav-link {
+            color: white;
+        }
+        .navbar .nav-link:hover {
+            color: #e0e0e0;
+        }
+
+        /* footer */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        /* infos */
+        .info-container {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .info-title {
+            font-size: 2rem;
+            /* margin-bottom: 15px; */
+            margin-bottom: 1px;
+            color: #f8f9fa;
+        }
+
+        .info-description {
+            font-size: 1rem;
+            /* margin-bottom: 20px; */
+            color: #ccc;
+        }
+
+        .info-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            border: 1px solid #444;
+            margin-bottom: 30px;
+        }
+
+        /* aviso */
+        .alert-card {
+            display: flex;
+            align-items: center;
+            background-color: #3b3b3b;
+            color: #fff;
+            padding: 15px 20px;
+            border-left: 6px solid #ffcc00;
+            border-radius: 0.5rem;
+            margin-top: 15px;
+            /* margin: 100px; */
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .alert-icon {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .alert-message {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+
+
+      
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">ZENIN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="/index.html">INICIO</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="simuladorlucro/index.html">SIMULADOR DE LUCRO</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/enfurecida/index.html">ENFURECIDA</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/missoes/index.html">MISSÃO</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <!-- Infos -->
+
+    <div class="info-container">
+        <h2 class="info-title">1º Oráculo</h2>
+        <p class="info-description">
+            O acesso à sala do primeiro oráculo é totalmente livre — basta ir até a localização "365,965,3", e clicar no pentagrama para ser teleportado.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-1e2.jpg" alt="Banner das Caçadas" class="info-image">
+        <h2 class="info-title">2º Oráculo</h2>
+        <p class="info-description">
+            Para acessar a sala do segundo oráculo, equipe uma bota com biqueira de aço e quebre a pedra bloqueando a passagem. Após atravessar a porta, clique no pentagrama para prosseguir.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-1e2.jpg" alt="Banner das Caçadas" class="info-image">
+        <h2 class="info-title">3º Oráculo</h2>
+        <p class="info-description">
+            Para acessar a sala do terceiro oráculo, vá até a localização exata "351,926,3", onde uma mensagem será exibida: "AI MEU DEDO DO PÉ!". Em seguida, retorne até as portas e clique no pentagrama correspondente para entrar.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-3.jpg" alt="Banner das Caçadas" class="info-image">
+        <h2 class="info-title">4º Oráculo</h2>
+        <p class="info-description">
+            Para acessar a sala do quarto oráculo, primeiro vá até a localização "360,958,3", pesque um Peixe do Céu e use-o.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-4-1.jpg" alt="Banner das Caçadas" class="info-image">
+        <p class="info-description">
+            Em seguida, após ser teleportado, encontre a alavanca escondida atrás da árvore, puxe-a e saia pelo buraco. Em seguida, retorne até as portas e clique no pentagrama correspondente para entrar.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-4-2.jpg" alt="Banner das Caçadas" class="info-image">
+        <h2 class="info-title">5º Oráculo</h2>
+        <p class="info-description">
+            Para acessar a sala do quinto oráculo, vá até a localização "399,962,3". Lá, pise nos switches seguindo esta sequência: cima, cima, baixo, baixo, esquerda, direita, esquerda, direita. Em seguida, retorne até as portas e clique no pentagrama correspondente para entrar.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-5.jpg" alt="Banner das Caçadas" class="info-image">
+        <h2 class="info-title">6º Oráculo</h2>
+        <p class="info-description">
+            Para acessar a sala do sexto oráculo, vá até a localização exata "332,942,3" e aguarde até que a mensagem "clique." apareça sobre sua cabeça. Em seguida, retorne até as portas e clique no pentagrama correspondente para entrar.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-6.jpg" alt="Banner das Caçadas" class="info-image">
+        <h2 class="info-title">7º Oráculo</h2>
+        <p class="info-description">
+            Por fim, para acessar a sala final do oráculo, vá até a localização exata "336,923,3", digite "f" e aguarde até que a mensagem "clique." apareça sobre sua cabeça. Em seguida, retorne até as portas e clique no último pentagrama para entrar.
+        </p>
+        <img src="/missoes/tutorial/img/map-orac-7.jpg" alt="Banner das Caçadas" class="info-image">
+    </div>
+    
+    <div class="alert-card">
+        <div class="alert-icon">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+        </div>
+        <div class="alert-message">
+            <strong>Aviso:</strong> Cada vez que você derrota um oráculo, um tempo de espera de 30 minutos é ativado antes que o próximo possa ser acessado. Isso significa que você precisará repetir o processo de liberação das portas a cada etapa para continuar progredindo pelas salas seguintes.
+        </div>
+    </div>
+    
+    
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <p>&copy; 2025 Zenyn. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
