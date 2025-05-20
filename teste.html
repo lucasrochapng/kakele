@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Kakele</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="/img-wiki/img-principal/cool.png" type="image/x-icon">
+
+  <style>
+    body {
+      background-color: #023f66;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 100px;
+    }
+
+    .banner {
+      position: relative;
+      background-image: url('/img-wiki/img-principal/banner-kakele.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 170px;
+      overflow: visible;
+      margin: 20px auto;
+      max-width: 1000px;
+      border-radius: 10px;
+      border: 3px solid #004080;
+    }
+
+    .logo {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      height: 120px;
+    }
+
+    .monster-left {
+      position: absolute;
+      left: -60px;
+      bottom: 0;
+      height: 170px;
+      z-index: 2;
+    }
+
+    .monster-right {
+      position: absolute;
+      right: -40px;
+      bottom: -20px;
+      height: 230px;
+      z-index: 2;
+    }
+
+    .btn-area {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 4;
+    }
+
+    .btn-custom {
+      background: linear-gradient(to bottom, #ff9900, #cc3300);
+      color: white;
+      border-radius: 20px;
+      border: none;
+      padding: 5px 25px;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 18px;
+      box-shadow: 2px 2px 4px #00000080;
+    }
+
+    .container {
+        max-width: 1020px;
+    }
+
+    .sidebar {
+      background-color: #0a5a90;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 10px 5px;
+      text-align: center;
+      
+    }
+
+    .sidebar h5 {
+      color: #fff;
+      padding: 6px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 1px solid #0c6ca2;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .menu a {
+      display: block;
+      padding: 6px 15px;
+      color: #ffffff;
+      font-size: 13px;
+      border-bottom: 1px solid #0c6ca2;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .menu a:last-child {
+      border-bottom: none;
+    }
+
+    .menu a:hover {
+      background-color: #0c6ca2;
+    }
+
+    .highscore-wrapper {
+      background-color: #0a5a90;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .highscore-wrapper table {
+      width: 100%;
+      color: #fff;
+      font-size: 12px;
+      table-layout: fixed;
+    }
+
+    .highscore-wrapper th,
+    .highscore-wrapper td {
+      text-align: center;
+      padding: 4px;
+      word-wrap: break-word;
+    }
+
+    .highscore-wrapper thead th {
+      border-bottom: 1px solid #0c6ca2;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .form-select-sm {
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .content {
+      background-color: #e8eff7;
+      color: #000;
+      border-radius: 10px;
+      /* padding: 20px; */
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      border: 3px solid #0c6ca2;
+      text-align: justify;
+      font-size: 0.9rem;
+    }
+
+    .content h2 {
+      /* background-color: #0c6ca2; */
+      background: linear-gradient(to bottom, #0c6ca2, #e8eff7);
+      color: #0b4668;
+      padding: 10px;
+      border-radius: 0;
+      font-size: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .downloads img,
+    .screenshots img {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .logo-tibiame {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <img src="/img-wiki/img-principal/sobek_GRande - Copia.png" class="monster-left" alt="Monstro Esquerdo">
+    <img src="/img-wiki/img-principal/Fauno_Grande .png" class="monster-right" alt="Monstro Direito">
+    <img src="/img-wiki/img-principal/logo_2024.png" class="logo" alt="Logo TibiaME">
+
+    <div class="btn-area">
+      <button class="btn-custom">Baixar</button>
+      <button class="btn-custom">Jogar</button>
+      <button class="btn-custom">Pagamentos</button>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row g-3">
+      <!-- Menu lateral esquerdo -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          <h5>Menu</h5>
+          <div class="menu">
+            <a href="#">Principal</a>
+            <a href="#">Missões</a>
+            <a href="#">Monstros</a>
+            <a href="#">Itens</a>
+            <a href="#">Outfits</a>
+            <a href="#">Mascotes</a>
+            <a href="#">Montarias</a>
+            <a href="#">NPCs</a>
+            <a href="#">Rankings</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <h5>Ranking</h5>
+          <div class="highscore-wrapper">
+            <table class="table table-borderless table-sm mb-0">
+              <thead>
+                <tr>
+                  <th style="width: 15%;">#</th>
+                  <th>Nome</th>
+                  <th style="width: 30%;">Lv.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Eniena</td><td>1523</td></tr>
+                <tr><td>2</td><td>DemonMg</td><td>1493</td></tr>
+                <tr><td>3</td><td>Storywis</td><td>1448</td></tr>
+                <tr><td>4</td><td>Kapparzo</td><td>1430</td></tr>
+                <tr><td>5</td><td>Ferhattr</td><td>1418</td></tr>
+                <tr><td>6</td><td>Razorck</td><td>1416</td></tr>
+                <tr><td>7</td><td>domingooooL</td><td>1398</td></tr>
+                <tr><td>8</td><td>FuryManco</td><td>1372</td></tr>
+                <tr><td>9</td><td>Emet</td><td>1370</td></tr>
+                <tr><td>10</td><td>Murattr</td><td>1362</td></tr>
+              </tbody>
+            </table>
+            <select class="form-select form-select-sm">
+              <option>Global</option>
+              <option>Blue</option>
+              <option>Red</option>
+              <option>Green</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo central -->
+      <div class="col-md-6">
+        <div class="content">
+          <h2>
+            <img src="/img-wiki/img-principal/question.png" alt="Ícone Kakele" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+            O que é Kakele?
+          </h2>
+          <p>
+            Kakele é um jogo MMORPG 2D que combina nostalgia com uma jogabilidade moderna e acessível. Ambientado em um vasto mundo de fantasia, Kakele permite que os jogadores escolham entre diferentes classes, enfrentem monstros, completem missões, explorem masmorras e interajam com outros jogadores em tempo real.
+          </p>
+          <p>
+            O jogo se destaca pelo seu estilo gráfico retrô em pixel art, sistema de progressão baseado em grind e PvP opcional, além de um mercado ativo dentro do jogo. Kakele está disponível para múltiplas plataformas (PC, Android, iOS e Linux), com servidores globais e suporte a vários idiomas — ideal para quem busca uma experiência MMO clássica com liberdade e desafios constantes.
+          </p>
+          <img src="/img-wiki/img-principal/banner_square.png" class="logo-tibiame" alt="Banner TibiaME">
+
+          <h2 style="margin-top: 20px;">
+            <img src="/img-wiki/img-principal/flushed.png" alt="Ícone Kakele" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+            Novidades
+          </h2>
+          <p>
+            🔥 Mostre seu talento! Participe do nosso Concurso de Pixel Art com o tema ORIENTAL e concorra a Kakele Coins, Troféus e Tempo Premium! 🏆🎨
+          </p>
+          <p>
+            📆 De 19 a 26 de Maio
+          </p>
+          <p style="margin-top: -15px;">
+            📷 Publique sua arte no Instagram e marque <a href="">@kakeleonline</a>
+          </p>
+          <img src="/img-wiki/img-principal/novidade.jpg" class="logo-tibiame" alt="Banner TibiaME">
+        </div>
+        
+      </div>
+
+      <!-- Barra lateral direita -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          <div class="downloads">
+            <h5>Disponível em</h5>
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+            <img src="https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg" alt="Steam">
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <h5>Screenshots</h5>
+          <div class="screenshots">
+            <img src="/img-wiki/img-principal/Spiritual World 1.png" alt="Screenshot 1">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
