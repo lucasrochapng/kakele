@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Kakele - Monstros</title>
+    <title>Kakele - Itens</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="img-wiki/img-principal/cool.png" type="image/x-icon">
 
@@ -249,13 +249,36 @@
             height: 16px;
             vertical-align: middle;
             margin-right: 4px;
+            margin-top: -3px;
         }
 
         .loot-img {
-            width: 24px;
-            height: 24px;
+            width: auto;
+            height: 40px;
             margin: 0 2px;
         }
+
+        #filtroTipo {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        #filtroTipo:hover {
+            border-color: #888;
+        }
+
+        #filtroTipo:focus {
+            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+            border-color: #6666ff;
+        }
+
 
     </style>
 
@@ -287,7 +310,7 @@
                         <a href="#">Missões</a>
                         <a href="#">Monstros</a>
                         <a href="chefes.html">Chefes</a>
-                        <a href="itens.html">Itens</a>
+                        <a href="#">Itens</a>
                         <a href="#">Outfits</a>
                         <a href="#">Mascotes</a>
                         <a href="#">Montarias</a>
@@ -332,62 +355,91 @@
             </div>
 
             <!-- Conteúdo central -->
-            <div class="col-md-8">
+            <div class="col-md-10">
 
                 <div class="content">
                     <h2>
-                        <img src="img-wiki/img-monstros/icone-monstros.png" alt="Ícone Kakele" style="height: 30px; vertical-align: middle; margin-right: 8px;">
-                        Monstros
+                        <img src="img-wiki/img-itens/icone-itens.png" alt="Ícone Kakele" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+                        Itens
                     </h2>
+
+                        <label for="filtroTipo">Filtrar por tipo:</label>
+                        <select id="filtroTipo" onchange="filtrarPorId()">
+                        <option value="">Todos</option>
+                        <option value="amuleto">Amuleto</option>
+                        <option value="capacete">Capacete</option>
+                        <option value="anel">Anel</option>
+                        <option value="espada">Espada</option>
+                        <option value="machado">Machado</option>
+                        <option value="arco">Arco</option>
+                        <option value="luva">Luva</option>
+                        <option value="cajado">Cajado</option>
+                        <option value="armadura">Armadura</option>
+                        <option value="capa">Capa</option>
+                        <option value="escudo">Escudo</option>
+                        <option value="livro">Livro</option>
+                        <option value="bota">Bota</option>
+                        <option value="calça">Calça</option>
+                        <option value="ferramenta">Ferramenta</option>
+                        <option value="alimento-de-pet">Alimento de Pet</option>
+                        <option value="mochila">Mochila</option>
+                        </select>
+
+
 
                     <table class="monster-table" id="monsterTable">
 
                         <thead>
                             <tr>
                                 <th class="sortable" onclick="sortTable(0)">
-                                    <span class="th-content">Monstro <span class="sort-icon">⇅</span></span>
+                                    <span class="th-content">Item <span class="sort-icon">⇅</span></span>
                                 </th>
                                 <th class="sortable" onclick="toggleEnergyFilter(event)">
                                     <span class="th-content">Energia <span class="sort-icon">⇅</span></span>
                                 </th>
                                 <th class="sortable" onclick="sortTable(2)">
-                                    <span class="th-content">Experiência <span class="sort-icon">⇅</span></span>
+                                    <span class="th-content">Nível <span class="sort-icon">⇅</span></span>
                                 </th>
                                 <th class="sortable" onclick="sortTable(3)">
-                                    <span class="th-content">Vida <span class="sort-icon">⇅</span></span>
+                                    <span class="th-content">Armadura <span class="sort-icon">⇅</span></span>
                                 </th>
                                 <th class="sortable" onclick="sortTable(4)">
-                                    <span class="th-content">Ouro <span class="sort-icon">⇅</span></span>
+                                    <span class="th-content">Ataque <span class="sort-icon">⇅</span></span>
                                 </th>
-                                <th>Saque</th>
+                                <th class="sortable" onclick="sortTable(5)">
+                                    <span class="th-content">Magia <span class="sort-icon">⇅</span></span>
+                                </th>
+                                <th>Fontes</th>
                             </tr>
                         </thead>
 
                         <tbody id="monsterTableBody">
 
-                            <tr data-energy="natureza">
-                                <td><img src="img-wiki/img-monstros/rato.png" class="monster-img"><br>Rato</td>
-                                <td><img src="img-wiki/img-monstros/img-infos/energia-natureza.png" class="icon-small">Natureza</td>
-                                <td><img src="img-wiki/img-principal/cool.png" class="icon-small">5</td>
-                                <td><img src="img-wiki/img-monstros/img-infos/vida.png" class="icon-small">10</td>
-                                <td><img src="img-wiki/img-monstros/img-infos/ouro.png" class="icon-small">1</td>
+                            <tr data-energy="luz" data-id="armadura">
+                                <td><img src="img-wiki/img-itens/icone-itens.png" class="monster-img"><br>Armadura de Escamas de Dragão Dourado Cromático</td>
+                                <td><img src="img-wiki/img-monstros/img-infos/energia-luz.png" class="icon-small">Luz</td>
+                                <td><img src="img-wiki/img-principal/cool.png" class="icon-small">750</td>
+                                <td><img src="img-wiki/img-itens/img-infos/atributo-armadura.png" class="icon-small">400</td>
+                                <td><img src="img-wiki/img-itens/img-infos/atributo-ataque.png" class="icon-small">150</td>
+                                <td><img src="img-wiki/img-itens/img-infos/atributo-magia.png" class="icon-small">0</td>
                                 <td>
-                                    <img src="img-wiki//img-monstros/img-loot/Card.png" class="loot-img">
-                                    <img src="img-wiki//img-monstros/img-loot/queijo-mofado.png" class="loot-img">
-                                    
+                                    <img src="img-wiki//img-itens/img-fontes/o-dragao-dourado-cromatico.png" class="loot-img"><br>O Dragão Dourado Cromático
                                 </td>
                             </tr>
 
-                            <tr data-energy="trevas">
-                            <td><img src="img-wiki/img-monstros/skeleton.png" class="monster-img"><br>Esqueleto</td>
-                            <td><img src="img-wiki/img-icons/trevas.png" class="icon-small">Trevas</td>
-                            <td>180</td>
-                            <td>450</td>
-                            <td>80</td>
-                            <td>
-                                <img src="img-wiki/img-itens/item3.png" class="loot-img">
-                            </td>
+                            <tr data-energy="trevas" data-id="armadura">
+                                <td><img src="img-wiki/img-itens/armadura-de-escama-de-dragao-dourado.png" class="monster-img"><br>Armadura de Escamas de Dragão Dourado Morto-Vivo</td>
+                                <td><img src="img-wiki/img-monstros/img-infos/energia-trevas.png" class="icon-small">Trevas</td>
+                                <td><img src="img-wiki/img-principal/cool.png" class="icon-small">750</td>
+                                <td><img src="img-wiki/img-itens/img-infos/atributo-armadura.png" class="icon-small">400</td>
+                                <td><img src="img-wiki/img-itens/img-infos/atributo-ataque.png" class="icon-small">150</td>
+                                <td><img src="img-wiki/img-itens/img-infos/atributo-magia.png" class="icon-small">0</td>
+                                <td>
+                                    <img src="img-wiki//img-itens/img-fontes/o-dragao-dourado-morto-vivo.png" class="loot-img"><br>O Dragão Dourado Cromático
+                                </td>
                             </tr>
+
+                            
                             <!-- Adicione mais monstros conforme necessário -->
                         </tbody>
 
@@ -405,7 +457,7 @@
             </div>
 
             <!-- Barra lateral direita -->
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
 
                 <div class="sidebar">
                     <div class="downloads">
@@ -422,7 +474,7 @@
                         <img src="img-wiki/img-principal/Spiritual World 1.png" alt="Screenshot 1">   
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -483,6 +535,25 @@
         });
 
     </script>
+
+    <script>
+    function filtrarPorId() {
+    const filtro = document.getElementById("filtroTipo").value;
+    const linhas = document.querySelectorAll("table tbody tr");
+
+    linhas.forEach(linha => {
+        const tipo = linha.getAttribute("data-id");
+        
+        if (!filtro || tipo === filtro) {
+        linha.style.display = "";
+        } else {
+        linha.style.display = "none";
+        }
+    });
+    }
+    </script>
+
+
 
 
 </body>
