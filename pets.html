@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Kakele - Mascotes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img-wiki/img-principal/cool.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="banner">
+        <img src="img/banner_esquerda.png" class="monster-left" alt="Monstro Esquerdo">
+        <img src="img/banner_direita.png" class="monster-right" alt="Monstro Direito">
+        <img src="img/banner_centro.png" class="logo" alt="Logo">
+
+        <div class="btn-area">
+            <button class="btn-custom">Baixar</button>
+            <button class="btn-custom">Jogar</button>
+            <button class="btn-custom">Pagamentos</button>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row g-3">
+
+            <!-- Menu lateral esquerdo -->
+            <div class="col-md-2">
+                <div class="sidebar">
+                    <h5>Menu</h5>
+                    <div class="menu">
+                        <a href="teste.html">Principal</a>
+                        <a href="#">Missões</a>
+                        <a href="#">Monstros</a>
+                        <a href="chefes.html">Chefes</a>
+                        <a href="itens.html">Itens</a>
+                        <a href="#">Outfits</a>
+                        <a href="#">Mascotes</a>
+                        <a href="#">Montarias</a>
+                        <a href="#">NPCs</a>
+                        <a href="#">Rankings</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo central -->
+            <div class="col-md-10">
+                <div class="content">
+                    <h2>
+                        <img src="pets/icone-pets.png" alt="Ícone Kakele" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+                        Mascotes
+                    </h2>
+
+                    <table class="monster-table" id="monsterTable">
+                        <thead>
+                            <tr>
+                                <th class="sortable" onclick="sortTable(0)">
+                                    <span class="th-content">Mascote <span class="sort-icon">⇅</span></span>
+                                </th>
+                                <th class="sortable" onclick="sortTable(1)">
+                                    <span class="th-content">Magias <span class="sort-icon">⇅</span></span>
+                                </th>
+                                <th class="sortable" onclick="sortTable(2)">
+                                    <span class="th-content">Custo NPC <span class="sort-icon">⇅</span></span>
+                                </th>
+                                <th class="sortable" onclick="sortTable(3)">
+                                    <span class="th-content">Custo Loja <span class="sort-icon">⇅</span></span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="monsterTableBody">
+
+                            <!-- capivara -->
+                            <tr>
+                                <td>
+                                    <img src="pets/capivara.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/capivara.jpg" 
+                                         data-img2="pets/capivara_evoluida.jpg"><br>
+                                    Capivara
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- caracol -->
+                            <tr>
+                                <td>
+                                    <img src="pets/caracol.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/caracol.jpg" 
+                                         data-img2="pets/caracol_evoluido.jpg"><br>
+                                    Caracol do Mar
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- coruja mágica -->
+                            <tr>
+                                <td>
+                                    <img src="pets/coruja.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/coruja.jpg" 
+                                         data-img2="pets/coruja_evoluida.jpg"><br>
+                                    Coruja Mágica
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- cria de dragão cromático -->
+                            <tr>
+                                <td>
+                                    <img src="pets/cria.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/cria.jpg" 
+                                         data-img2="pets/cria_evoluido.jpg"><br>
+                                    Cria de Dragão
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- cubo de gelo -->
+                            <tr>
+                                <td>
+                                    <img src="pets/cubo.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/cubo.jpg" 
+                                         data-img2="pets/cubo_evoluido.jpg"><br>
+                                    Cubo de Gelo
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- diabinho -->
+                            <tr>
+                                <td>
+                                    <img src="pets/diabinho.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/diabinho.jpg" 
+                                         data-img2="pets/diabinho_evoluido.jpg"><br>
+                                    Diabinho
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- escaravelho -->
+                            <tr>
+                                <td>
+                                    <img src="pets/escaravelho.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/escaravelho.jpg" 
+                                         data-img2="pets/escaravelho_evoluido.jpg"><br>
+                                    Escaravelho
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- escorpião -->
+                            <tr>
+                                <td>
+                                    <img src="pets/escorpiao.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/escorpiao.jpg" 
+                                         data-img2="pets/escorpiao_evoluido.jpg"><br>
+                                    Escorpião
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- fada -->
+                            <tr>
+                                <td>
+                                    <img src="pets/fada.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/fada.jpg" 
+                                         data-img2="pets/fada_evoluida.jpg"><br>
+                                    Fada
+                                </td>
+                                <td>
+                                    Nv 30: Remove buffs negativos<br>
+                                    Nv 50: Buff de vida ou mana<br>
+                                    Nv 70: Revive
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">500,000 
+                                    <img src="img/kkc.png" class="icon-small">500<br>
+                                    <img src="itens/outros/trevo.png" class="icon-small">10 
+                                    <img src="itens/outros/livro_de_bruxaria.png" class="icon-small">100 
+                                    <img src="itens/outros/corda_sagrada.png" class="icon-small">100<br>
+                                    <img src="itens/outros/pena_de_harpia.png" class="icon-small">100 
+                                    <img src="itens/outros/mel.png" class="icon-small">100 
+                                    <img src="itens/outros/presa_de_cobra.png" class="icon-small">100 
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">6,000
+                                </td>
+                            </tr>
+
+                            <!-- galinha -->
+                            <tr>
+                                <td>
+                                    <img src="pets/galinha.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/galinha.jpg" 
+                                         data-img2="pets/galinha_evoluida.jpg"><br>
+                                    Galinha
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- ganso -->
+                            <tr>
+                                <td>
+                                    <img src="pets/ganso.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/ganso.jpg" 
+                                         data-img2="pets/ganso_evoluido.jpg"><br>
+                                    Ganso
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- gato fantasma -->
+                            <tr>
+                                <td>
+                                    <img src="pets/fantasma.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/fantasma.jpg" 
+                                         data-img2="pets/fantasma_evoluido.jpg"><br>
+                                    Gato Fantasma
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- gato pelado -->
+                            <tr>
+                                <td>
+                                    <img src="pets/gato.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/gato.jpg" 
+                                         data-img2="pets/gato_evoluido.jpg"><br>
+                                    Gato Pelado
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Lata Mortal -->
+                            <tr>
+                                <td>
+                                    <img src="pets/lata.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/lata.jpg" 
+                                         data-img2="pets/lata_evoluida.jpg"><br>
+                                    Lata Mortal
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Melotron -->
+                            <tr>
+                                <td>
+                                    <img src="pets/melotron.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/melotron.jpg" 
+                                         data-img2="pets/melotron_evoluido.jpg"><br>
+                                    Melotron
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Papagaio -->
+                            <tr>
+                                <td>
+                                    <img src="pets/papagaio.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/papagaio.jpg" 
+                                         data-img2="pets/papagaio_evoluido.jpg"><br>
+                                    Papagaio
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Porco -->
+                            <tr>
+                                <td>
+                                    <img src="pets/porco.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/porco.jpg" 
+                                         data-img2="pets/porco_evoluido.jpg"><br>
+                                    Porco
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Predo a Preda -->
+                            <tr>
+                                <td>
+                                    <img src="pets/predo.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/predo.jpg" 
+                                         data-img2="pets/predo_evoluido.jpg"><br>
+                                    Predo a Preda
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Robô de Prancha -->
+                            <tr>
+                                <td>
+                                    <img src="pets/prancha.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/prancha.jpg" 
+                                         data-img2="pets/prancha_evoluida.jpg"><br>
+                                    Robô de Prancha
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Salamandra -->
+                            <tr>
+                                <td>
+                                    <img src="pets/salamandra.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/salamandra.jpg" 
+                                         data-img2="pets/salamandra_evoluida.jpg"><br>
+                                    Salamandra
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- sapo -->
+                            <tr>
+                                <td>
+                                    <img src="pets/sapo.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/sapo.jpg" 
+                                         data-img2="pets/sapo_evoluido.jpg"><br>
+                                    Sapo
+                                </td>
+                                <td>
+                                    Nv 30: +10% de velocidade<br>
+                                    Nv 50: Invisibilidade<br>
+                                    Nv 70: Veneno em área
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">1,750,000 
+                                    <img src="img/kkc.png" class="icon-small">250<br>
+                                    <img src="itens/outros/sapo_de_ouro.png" class="icon-small">1
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">3,000
+                                </td>
+                            </tr>
+
+                            <!-- Tartaruga -->
+                            <tr>
+                                <td>
+                                    <img src="pets/tartaruga.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/tartaruga.jpg" 
+                                         data-img2="pets/tartaruga_evoluida.jpg"><br>
+                                    Tartaruga
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            <!-- Urubu -->
+                            <tr>
+                                <td>
+                                    <img src="pets/urubu.jpg" 
+                                         class="monster-img rotating-img" 
+                                         data-img1="pets/urubu.jpg" 
+                                         data-img2="pets/urubu_evoluido.jpg"><br>
+                                    Urubu
+                                </td>
+                                <td>
+                                    ...
+                                </td>
+                                <td>
+                                    <img src="img/ouro.png" class="icon-small">...
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                                <td>
+                                    <img src="img/kkc.png" class="icon-small">...
+                                </td>
+                            </tr>
+
+                            
+
+                            <!-- Adicione mais linhas conforme necessário -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Script para ordenação de colunas
+        let sortDirections = [true, true, true, true, true, true];
+
+        function sortTable(columnIndex) {
+            const table = document.getElementById("monsterTable");
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.rows);
+
+            const direction = sortDirections[columnIndex] ? 1 : -1;
+            sortDirections[columnIndex] = !sortDirections[columnIndex];
+
+            rows.sort((a, b) => {
+                let valA = a.cells[columnIndex].textContent.trim();
+                let valB = b.cells[columnIndex].textContent.trim();
+
+                if (!isNaN(valA) && !isNaN(valB)) {
+                    return (Number(valA) - Number(valB)) * direction;
+                }
+
+                return valA.localeCompare(valB) * direction;
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        // Script para alternar imagens dos mascotes
+        function rotateImages() {
+            const images = document.querySelectorAll('.rotating-img');
+
+            images.forEach(img => {
+                const img1 = img.getAttribute('data-img1');
+                const img2 = img.getAttribute('data-img2');
+
+                if (img.src.endsWith(img1)) {
+                    img.src = img2;
+                } else {
+                    img.src = img1;
+                }
+            });
+        }
+
+        setInterval(rotateImages, 2000);
+    </script>
+
+</body>
+</html>
