@@ -148,10 +148,10 @@
 
                         <thead>
                             <tr>
-                                <th class="sortable" onclick="sortTable(0)">
+                                <th class="sortable" onclick="sortByName()">
                                     <span class="th-content">Item <span class="sort-icon">⇅</span></span>
                                 </th>
-                                <th class="sortable" onclick="sortTable(2)">
+                                <th class="sortable" onclick="sortByLevel()">
                                     <span class="th-content">Nível <span class="sort-icon">⇅</span></span>
                                 </th>
                                 <th class="sortable">
@@ -306,6 +306,54 @@
                 new bootstrap.Tooltip(tooltipTriggerEl);
             });
         });
+    </script>
+
+    <script>
+        let sortDirectionName = 'asc';
+
+        function sortByName() {
+            const table = document.getElementById("monsterTable");
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+
+            rows.sort((a, b) => {
+                let nameA = a.cells[0].innerText.toLowerCase();
+                let nameB = b.cells[0].innerText.toLowerCase();
+
+                if (nameA < nameB) return sortDirectionName === 'asc' ? -1 : 1;
+                if (nameA > nameB) return sortDirectionName === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            sortDirectionName = sortDirectionName === 'asc' ? 'desc' : 'asc';
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+
+    <script>
+        let sortDirectionLevel = 'asc';
+
+        function sortByLevel() {
+            const table = document.getElementById("monsterTable");
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+
+            rows.sort((a, b) => {
+                const cellA = a.cells[1];
+                const cellB = b.cells[1];
+
+                // Extrai apenas o número, ignorando a imagem
+                const levelA = parseInt(cellA.textContent.trim()) || 0;
+                const levelB = parseInt(cellB.textContent.trim()) || 0;
+
+                return sortDirectionLevel === 'asc' ? levelA - levelB : levelB - levelA;
+            });
+
+            sortDirectionLevel = sortDirectionLevel === 'asc' ? 'desc' : 'asc';
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
     </script>
 
 
