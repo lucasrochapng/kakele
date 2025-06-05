@@ -12,36 +12,36 @@ body {
     background-position: center;
     height: 170px;
     overflow: visible;
-    margin: 20px auto;
+    margin: 10px auto;
     max-width: 1000px;
     border-radius: 10px;
     border: 3px solid #004080;
 }
 
-        .logo {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            height: 120px;
-        }
+.logo {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    height: 120px;
+}
 
-        .monster-left {
-            position: absolute;
-            left: -18px;
-            bottom: 0;
-            height: 170px;
-            z-index: 2;
-        }
+.monster-left {
+    position: absolute;
+    left: -48px;
+    bottom: 0;
+    height: 170px;
+    z-index: 2;
+}
 
-        .monster-right {
-            position: absolute;
-            right: -40px;
-            bottom: -20px;
-            height: 230px;
-            z-index: 2;
-        }
+.monster-right {
+    position: absolute;
+    right: -40px;
+    bottom: -20px;
+    height: 230px;
+    z-index: 2;
+}
 
         .btn-area {
             position: absolute;
@@ -72,7 +72,8 @@ body {
         .sidebar {
             background-color: #0a5a90;
             border-radius: 10px;
-            margin-bottom: 20px;
+            /* margin-bottom: 10px; */
+            margin-top: -10px;
             padding: 10px 5px;
             text-align: center;
         }
@@ -104,6 +105,33 @@ body {
         .menu a:hover {
             background-color: #0c6ca2;
         }
+
+        .menu-horizontal {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha se for necessário */
+    gap: 10px; /* Espaço entre os links */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.menu-horizontal a {
+    display: inline-block;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+
+.menu-horizontal a:hover {
+    background-color: #0c6ca2;
+}
+
 
         .highscore-wrapper {
             background-color: #0a5a90;
@@ -335,6 +363,7 @@ body {
         } */
 
         .filtros {
+            margin-right: 10px;
             padding: 5px 12px;
             font-size: 14px;
             color: #555;
