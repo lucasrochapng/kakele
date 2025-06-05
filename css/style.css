@@ -5,18 +5,18 @@ body {
     margin-bottom: 100px;
 }
 
-        .banner {
-            position: relative;
-            background-image: url('../img/banner_fundo.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 170px;
-            overflow: visible;
-            margin: 20px auto;
-            max-width: 1000px;
-            border-radius: 10px;
-            border: 3px solid #004080;
-        }
+.banner {
+    position: relative;
+    background-image: url('../img/banner_fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 170px;
+    overflow: visible;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    border: 3px solid #004080;
+}
 
         .logo {
             position: absolute;
@@ -29,7 +29,6 @@ body {
 
         .monster-left {
             position: absolute;
-            /* left: -60px; */
             left: -18px;
             bottom: 0;
             height: 170px;
@@ -38,7 +37,7 @@ body {
 
         .monster-right {
             position: absolute;
-            right: -50px;
+            right: -40px;
             bottom: -20px;
             height: 230px;
             z-index: 2;
@@ -246,8 +245,114 @@ body {
         }
 
         .loot-img {
-            width: 24px;
-            height: 24px;
+            width: auto;
+            height: 40px;
             margin: 0 2px;
         }
+
+        /* #filtroTipo {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        #filtroTipo:hover {
+            border-color: #888;
+        }
+
+        #filtroTipo:focus {
+            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+            border-color: #6666ff;
+        }
+
+        #atributoOrdenacao {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        #atributoOrdenacao:hover {
+            border-color: #888;
+        }
+
+        #atributoOrdenacao:focus {
+            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+            border-color: #6666ff;
+        }
+
+        #filtroEnergia {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        #filtroEnergia:hover {
+            border-color: #888;
+        }
+
+        #filtroEnergia:focus {
+            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+            border-color: #6666ff;
+        }
+
+        #filtroRaridade {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        #filtroRaridade:hover {
+            border-color: #888;
+        }
+
+        #filtroRaridade:focus {
+            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+            border-color: #6666ff;
+        } */
+
+        .filtros {
+            padding: 5px 12px;
+            font-size: 14px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .filtros:hover {
+            border-color: #888;
+        }
+
+        .filtros:focus {
+            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+            border-color: #6666ff;
+        }
+
 

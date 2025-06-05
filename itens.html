@@ -5,282 +5,7 @@
     <title>Kakele - Itens</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="img-wiki/img-principal/cool.png" type="image/x-icon">
-
-    <style>
-        body {
-            background-color: #023f66;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 100px;
-        }
-
-        .banner {
-            position: relative;
-            background-image: url('img-wiki/img-principal/banner-kakele.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 170px;
-            overflow: visible;
-            margin: 20px auto;
-            max-width: 1000px;
-            border-radius: 10px;
-            border: 3px solid #004080;
-        }
-
-        .logo {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            height: 120px;
-        }
-
-        .monster-left {
-            position: absolute;
-            left: -60px;
-            bottom: 0;
-            height: 170px;
-            z-index: 2;
-        }
-
-        .monster-right {
-            position: absolute;
-            right: -40px;
-            bottom: -20px;
-            height: 230px;
-            z-index: 2;
-        }
-
-        .btn-area {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 4;
-        }
-
-        .btn-custom {
-            background: linear-gradient(to bottom, #ff9900, #cc3300);
-            color: white;
-            border-radius: 20px;
-            border: none;
-            padding: 5px 25px;
-            font-weight: bold;
-            font-style: italic;
-            font-size: 18px;
-            box-shadow: 2px 2px 4px #00000080;
-        }
-
-        .container {
-            max-width: 1020px;
-        }
-
-        .sidebar {
-            background-color: #0a5a90;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            padding: 10px 5px;
-            text-align: center;
-        }
-
-        .sidebar h5 {
-            color: #fff;
-            padding: 6px 15px;
-            font-size: 14px;
-            font-weight: bold;
-            border-bottom: 1px solid #0c6ca2;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .menu a {
-            display: block;
-            padding: 6px 15px;
-            color: #ffffff;
-            font-size: 13px;
-            border-bottom: 1px solid #0c6ca2;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
-
-        .menu a:last-child {
-            border-bottom: none;
-        }
-
-        .menu a:hover {
-            background-color: #0c6ca2;
-        }
-
-        .highscore-wrapper {
-            background-color: #0a5a90;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .highscore-wrapper table {
-            width: 100%;
-            color: #fff;
-            font-size: 12px;
-            table-layout: fixed;
-        }
-
-        .highscore-wrapper th,
-        .highscore-wrapper td {
-            text-align: center;
-            padding: 4px;
-            word-wrap: break-word;
-        }
-
-        .highscore-wrapper thead th {
-            border-bottom: 1px solid #0c6ca2;
-            font-weight: bold;
-            font-size: 13px;
-        }
-
-        .form-select-sm {
-            font-size: 12px;
-            padding: 5px 10px;
-            margin-top: 8px;
-            width: 100%;
-        }
-
-        .content {
-            background-color: #e8eff7;
-            color: #000;
-            border-radius: 10px;
-            /* padding: 20px; */
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 20px;
-            border: 3px solid #0c6ca2;
-            text-align: justify;
-            font-size: 0.9rem;
-        }
-
-        .content h2 {
-            /* background-color: #0c6ca2; */
-            background: linear-gradient(to bottom, #0c6ca2, #e8eff7);
-            color: #0b4668;
-            padding: 10px;
-            border-radius: 0;
-            font-size: 20px;
-            margin-left: -20px;
-            margin-right: -20px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-
-        .downloads img,
-        .screenshots img {
-            width: 100%;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        .logo-tibiame {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .monster-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 0.85rem;
-        }
-
-        .monster-table th, .monster-table td {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            text-align: center;
-        }
-
-        .monster-table th {
-            cursor: pointer;
-            position: relative;
-            background: #d6e6f5;
-        }
-
-        .th-content {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px; /* espaço entre o texto e o ícone */
-        }
-
-        .sort-icon {
-            font-size: 0.75rem;
-            color: #666;
-        }
-
-
-        .energy-filter {
-            display: none;
-            position: absolute;
-            background-color: #ffffff;
-            border: 1px solid #aaa;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            padding: 5px;
-            border-radius: 5px;
-            z-index: 100;
-        }
-
-        .energy-filter button {
-            background: none;
-            border: none;
-            padding: 5px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: block;
-            text-align: left;
-            width: 100%;
-        }
-
-        .monster-img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .icon-small {
-            width: 16px;
-            height: 16px;
-            vertical-align: middle;
-            margin-right: 4px;
-            margin-top: -3px;
-        }
-
-        .loot-img {
-            width: auto;
-            height: 40px;
-            margin: 0 2px;
-        }
-
-        #filtroTipo {
-            padding: 5px 12px;
-            font-size: 14px;
-            color: #555;
-            background-color: #fff;
-            border: 1px solid #555;
-            border-radius: 6px;
-            outline: none;
-            transition: border 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        #filtroTipo:hover {
-            border-color: #888;
-        }
-
-        #filtroTipo:focus {
-            box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
-            border-color: #6666ff;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -363,8 +88,9 @@
                         Itens
                     </h2>
 
-                        <label for="filtroTipo">Filtrar por tipo:</label>
-                        <select id="filtroTipo" onchange="filtrarPorId()">
+                        <!-- filtro por tipo de item -->
+                        <label for="filtroTipo">Tipo:</label>
+                        <select id="filtroTipo" class="filtros" onchange="aplicarTodosFiltros()">
                         <option value="">Todos</option>
                         <option value="amuleto">Amuleto</option>
                         <option value="capacete">Capacete</option>
@@ -385,6 +111,37 @@
                         <option value="mochila">Mochila</option>
                         </select>
 
+                        <!-- filtro por atributo -->
+                        <label for="atributoOrdenacao">Atributo:</label>
+                        <select id="atributoOrdenacao" class="filtros" onchange="ordenarPorAtributo()">
+                            <option value="">Selecionar</option>
+                            <option value="armadura">Armadura</option>
+                            <option value="ataque">Ataque</option>
+                            <option value="magia">Magia</option>
+                        </select>
+
+                        <!-- filtro por energia -->
+                        <label for="filtroEnergia">Energia:</label>
+                        <select id="filtroEnergia" class="filtros" onchange="aplicarTodosFiltros()">
+                            <option value="">Todas</option>
+                            <option value="luz">Luz</option>
+                            <option value="trevas">Trevas</option>
+                            <option value="natureza">Natureza</option>
+                        </select>
+
+                        <!-- filtro por raridade -->
+                        <label for="filtroRaridade">Raridade:</label>
+                        <select id="filtroRaridade" class="filtros" onchange="aplicarTodosFiltros()">
+                            <option value="">Todas</option>
+                            <option value="comum">Comum</option>
+                            <option value="incomum">Incomum</option>
+                            <option value="raro">Raro</option>
+                            <option value="reliquia">Relíquia</option>
+                            <option value="lendario">Lendário</option>
+                        </select>
+
+
+
 
 
                     <table class="monster-table" id="monsterTable">
@@ -394,20 +151,15 @@
                                 <th class="sortable" onclick="sortTable(0)">
                                     <span class="th-content">Item <span class="sort-icon">⇅</span></span>
                                 </th>
-                                <th class="sortable" onclick="toggleEnergyFilter(event)">
-                                    <span class="th-content">Energia <span class="sort-icon">⇅</span></span>
-                                </th>
                                 <th class="sortable" onclick="sortTable(2)">
                                     <span class="th-content">Nível <span class="sort-icon">⇅</span></span>
                                 </th>
+                                <th class="sortable">
+                                    <span class="th-content">Energia</span></span>
+                                </th>
                                 <th class="sortable" onclick="sortTable(3)">
-                                    <span class="th-content">Armadura <span class="sort-icon">⇅</span></span>
+                                    <span class="th-content">Atributos</span></span>
                                 </th>
-                                <th class="sortable" onclick="sortTable(4)">
-                                    <span class="th-content">Ataque <span class="sort-icon">⇅</span></span>
-                                </th>
-                                <th class="sortable" onclick="sortTable(5)">
-                                    <span class="th-content">Magia <span class="sort-icon">⇅</span></span>
                                 </th>
                                 <th>Fontes</th>
                             </tr>
@@ -415,29 +167,77 @@
 
                         <tbody id="monsterTableBody">
 
-                            <tr data-energy="luz" data-id="armadura">
-                                <td><img src="img-wiki/img-itens/icone-itens.png" class="monster-img"><br>Armadura de Escamas de Dragão Dourado Cromático</td>
-                                <td><img src="img-wiki/img-monstros/img-infos/energia-luz.png" class="icon-small">Luz</td>
-                                <td><img src="img-wiki/img-principal/cool.png" class="icon-small">750</td>
-                                <td><img src="img-wiki/img-itens/img-infos/atributo-armadura.png" class="icon-small">400</td>
-                                <td><img src="img-wiki/img-itens/img-infos/atributo-ataque.png" class="icon-small">150</td>
-                                <td><img src="img-wiki/img-itens/img-infos/atributo-magia.png" class="icon-small">0</td>
+                            <!-- colar kajin -->
+                            <tr data-energy="trevas" data-id="amuleto" data-raridade="raro">
+                                <td><img src="itens/colares/colar_kajin.png" class="monster-img"><br>Colar Kajin</td>
+                                <td><img src="img/level.png" class="icon-small">800</td>
+                                <td><img src="img/energia_trevas.png" class="icon-small">Trevas</td>
+                                <td data-armadura="105" data-ataque="50" data-magia="0">
+                                    <img src="img/atributo_armadura.png" class="icon-small">105<br>
+                                    <img src="img/atributo_ataque.png" class="icon-small">50<br>
+                                    <img src="img/atributo_magia.png" class="icon-small">0
+                                </td>
                                 <td>
-                                    <img src="img-wiki//img-itens/img-fontes/o-dragao-dourado-cromatico.png" class="loot-img"><br>O Dragão Dourado Cromático
+                                    <img src="monstros/general_zeniva.png" class="loot-img" data-bs-toggle="tooltip" title="General Zeniva" data-bs-placement="top">
+                                    <img src="monstros/guerreiro_kajin.png" class="loot-img" data-bs-toggle="tooltip" title="Guerreiro Kajin" data-bs-placement="top">
+                                    <img src="monstros/rei_kajin.png" class="loot-img" data-bs-toggle="tooltip" title="Rei Kajin" data-bs-placement="top">
+                                    <img src="monstros/zuzba.png" class="loot-img" data-bs-toggle="tooltip" title="Zuzba" data-bs-placement="top">
                                 </td>
                             </tr>
 
-                            <tr data-energy="trevas" data-id="armadura">
-                                <td><img src="img-wiki/img-itens/armadura-de-escama-de-dragao-dourado.png" class="monster-img"><br>Armadura de Escamas de Dragão Dourado Morto-Vivo</td>
-                                <td><img src="img-wiki/img-monstros/img-infos/energia-trevas.png" class="icon-small">Trevas</td>
-                                <td><img src="img-wiki/img-principal/cool.png" class="icon-small">750</td>
-                                <td><img src="img-wiki/img-itens/img-infos/atributo-armadura.png" class="icon-small">400</td>
-                                <td><img src="img-wiki/img-itens/img-infos/atributo-ataque.png" class="icon-small">150</td>
-                                <td><img src="img-wiki/img-itens/img-infos/atributo-magia.png" class="icon-small">0</td>
+                            <!-- colar steampunk -->
+                            <tr data-energy="natureza" data-id="amuleto" data-raridade="incomum">
+                                <td><img src="itens/colares/colar_steampunk.jpg" class="monster-img"><br>Colar Steampunk</td>
+                                <td><img src="img/level.png" class="icon-small">700</td>
+                                <td><img src="img/energia_natureza.png" class="icon-small">Natureza</td>
+                                <td data-armadura="40" data-ataque="25" data-magia="0">
+                                    <img src="img/atributo_armadura.png" class="icon-small">40<br>
+                                    <img src="img/atributo_ataque.png" class="icon-small">25<br>
+                                    <img src="img/atributo_magia.png" class="icon-small">0
+                                </td>
                                 <td>
-                                    <img src="img-wiki//img-itens/img-fontes/o-dragao-dourado-morto-vivo.png" class="loot-img"><br>O Dragão Dourado Cromático
+                                    ?
                                 </td>
                             </tr>
+
+                            <!-- colar sentinela -->
+                            <tr data-energy="natureza" data-id="amuleto" data-raridade="raro">
+                                <td><img src="itens/colares/colar_sentinela.png" class="monster-img"><br>Colar Sentinela</td>
+                                <td><img src="img/level.png" class="icon-small">600</td>
+                                <td><img src="img/energia_natureza.png" class="icon-small">Natureza</td>
+                                <td data-armadura="105" data-ataque="0" data-magia="0">
+                                    <img src="img/atributo_armadura.png" class="icon-small">105<br>
+                                    <img src="img/atributo_ataque.png" class="icon-small">0<br>
+                                    <img src="img/atributo_magia.png" class="icon-small">0
+                                </td>
+                                <td>
+                                    <img src="monstros/arvore_sentinela.png" class="loot-img" data-bs-toggle="tooltip" title="Árvore Sentinela" data-bs-placement="top">
+                                </td>
+                            </tr>
+
+                            <!-- colar corrompido -->
+                            <tr data-energy="trevas" data-id="amuleto" data-raridade="raro">
+                                <td><img src="itens/colares/colar_corrompido.png" class="monster-img"><br>Colar Corrompido</td>
+                                <td><img src="img/level.png" class="icon-small">500</td>
+                                <td><img src="img/energia_trevas.png" class="icon-small">Trevas</td>
+                                <td data-armadura="25" data-ataque="150" data-magia="-15">
+                                    <img src="img/atributo_armadura.png" class="icon-small">25<br>
+                                    <img src="img/atributo_ataque.png" class="icon-small">150<br>
+                                    <img src="img/atributo_magia.png" class="icon-small">-15
+                                </td>
+                                <td>
+                                    <img src="monstros/xexeu.png" class="loot-img" data-bs-toggle="tooltip" title="Xexeu" data-bs-placement="top">
+                                </td>
+                            </tr>
+
+
+                            
+
+                            
+
+                            
+
+                            
 
                             
                             <!-- Adicione mais monstros conforme necessário -->
@@ -445,113 +245,72 @@
 
                     </table>
 
-                    <div id="energyFilter" class="energy-filter">
-                    <button onclick="filterByEnergy('todas')">Todas</button>
-                    <button onclick="filterByEnergy('natureza')">Natureza</button>
-                    <button onclick="filterByEnergy('trevas')">Trevas</button>
-                    <button onclick="filterByEnergy('luz')">Luz</button>
-                    </div>
-
                 </div>
                 
             </div>
 
-            <!-- Barra lateral direita -->
-            <!-- <div class="col-md-2">
-
-                <div class="sidebar">
-                    <div class="downloads">
-                        <h5>Disponível em</h5>
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
-                        <img src="https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg" alt="Steam">
-                    </div>
-                </div>
-
-                <div class="sidebar">
-                    <h5>Screenshots</h5>
-                    <div class="screenshots">
-                        <img src="img-wiki/img-principal/Spiritual World 1.png" alt="Screenshot 1">   
-                    </div>
-                </div>
-            </div> -->
 
         </div>
     </div>
 
 
+
     <script>
-        let sortDirections = [true, true, true, true]; // uma para cada coluna clicável
-        const energyFilterBox = document.getElementById("energyFilter");
+        function ordenarPorAtributo() {
+            const atributoSelecionado = document.getElementById("atributoOrdenacao").value;
+            if (!atributoSelecionado) return;
 
-        function sortTable(columnIndex) {
-            const table = document.getElementById("monsterTable");
-            const tbody = table.tBodies[0];
-            const rows = Array.from(tbody.rows);
-
-            const direction = sortDirections[columnIndex] ? 1 : -1;
-            sortDirections[columnIndex] = !sortDirections[columnIndex];
+            const tbody = document.querySelector("#monsterTable tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
 
             rows.sort((a, b) => {
-            let valA = a.cells[columnIndex].textContent.trim();
-            let valB = b.cells[columnIndex].textContent.trim();
-
-            if (!isNaN(valA) && !isNaN(valB)) {
-                return (Number(valA) - Number(valB)) * direction;
-            }
-
-            return valA.localeCompare(valB) * direction;
+                const valA = Number(a.cells[3].dataset[atributoSelecionado]) || 0;
+                const valB = Number(b.cells[3].dataset[atributoSelecionado]) || 0;
+                return valB - valA; // ordenação decrescente
             });
 
             rows.forEach(row => tbody.appendChild(row));
         }
-
-        function toggleEnergyFilter(event) {
-            event.stopPropagation(); // impede o fechamento imediato
-            const th = event.target.closest('th');
-            const buttonRect = th.getBoundingClientRect();
-            energyFilterBox.style.display = "block";
-            energyFilterBox.style.left = buttonRect.left + "px";
-            energyFilterBox.style.top = (window.scrollY + buttonRect.bottom) + "px";
-        }
-
-
-        function filterByEnergy(type) {
-            const rows = document.querySelectorAll("#monsterTableBody tr");
-            rows.forEach(row => {
-            if (type === "todas" || row.dataset.energy === type) {
-                row.style.display = "";
-            } else {
-                row.style.display = "none";
-            }
-            });
-            energyFilterBox.style.display = "none";
-        }
-
-        window.addEventListener('click', function (e) {
-            if (!energyFilterBox.contains(e.target) && e.target.innerText !== 'Energia') {
-            energyFilterBox.style.display = 'none';
-            }
-        });
-
     </script>
 
     <script>
-    function filtrarPorId() {
-    const filtro = document.getElementById("filtroTipo").value;
-    const linhas = document.querySelectorAll("table tbody tr");
+        function aplicarTodosFiltros() {
+            const tipoSelecionado = document.getElementById("filtroTipo").value;
+            const energiaSelecionada = document.getElementById("filtroEnergia").value;
+            const raridadeSelecionada = document.getElementById("filtroRaridade").value;
 
-    linhas.forEach(linha => {
-        const tipo = linha.getAttribute("data-id");
-        
-        if (!filtro || tipo === filtro) {
-        linha.style.display = "";
-        } else {
-        linha.style.display = "none";
+            const linhas = document.querySelectorAll("#monsterTable tbody tr");
+
+            linhas.forEach(linha => {
+                const tipo = linha.getAttribute("data-id");
+                const energia = linha.getAttribute("data-energy");
+                const raridade = linha.getAttribute("data-raridade");
+
+                const tipoOK = !tipoSelecionado || tipo === tipoSelecionado;
+                const energiaOK = !energiaSelecionada || energia === energiaSelecionada;
+                const raridadeOK = !raridadeSelecionada || raridade === raridadeSelecionada;
+
+                if (tipoOK && energiaOK && raridadeOK) {
+                    linha.style.display = "";
+                } else {
+                    linha.style.display = "none";
+                }
+            });
         }
-    });
-    }
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+                new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+
+
+
+
 
 
 
